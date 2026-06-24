@@ -115,7 +115,7 @@ export default {
       return json({ success: true, results });
     } catch (err) {
       console.error('[track]', err.message);
-      return json({ error: 'Internal server error' }, 500);
+      return json({ error: err.message, contactId, items }, 500);
     }
   },
 };
